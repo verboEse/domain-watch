@@ -1,3 +1,4 @@
+// Package integration defines the common interface for notification integrations.
 package integration
 
 import (

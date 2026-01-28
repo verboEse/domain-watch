@@ -1,4 +1,6 @@
 // Package util provides common utility functions and error values.
+//
+//nolint:revive // util is a common package name for utilities
 package util
 
 import "errors"

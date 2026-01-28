@@ -14,18 +14,27 @@ const (
 	FlagEvery = "every"
 	// FlagSleep specifies the delay between checking individual domains.
 	FlagSleep = "sleep"
+	// FlagThreshold specifies the notification thresholds in days before expiration.
 	FlagThreshold = "threshold"
 
+	// FlagLogFormat specifies the logging output format.
 	FlagLogFormat = "log-format"
-	FlagLogLevel  = "log-level"
+	// FlagLogLevel specifies the logging level.
+	FlagLogLevel = "log-level"
 
+	// FlagMetricsEnabled enables or disables Prometheus metrics.
 	FlagMetricsEnabled = "metrics-enabled"
+	// FlagMetricsAddress specifies the address for the metrics server.
 	FlagMetricsAddress = "metrics-address"
 
-	FlagTelegramChat  = "telegram-chat"
+	// FlagTelegramChat specifies the Telegram chat ID.
+	FlagTelegramChat = "telegram-chat"
+	// FlagTelegramToken specifies the Telegram bot token.
 	FlagTelegramToken = "telegram-token"
 
-	FlagGotifyURL   = "gotify-url"
+	// FlagGotifyURL specifies the Gotify server URL.
+	FlagGotifyURL = "gotify-url"
+	// FlagGotifyToken specifies the Gotify application token.
 	FlagGotifyToken = "gotify-token"
 )
 
