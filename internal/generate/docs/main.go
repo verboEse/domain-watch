@@ -1,3 +1,4 @@
+// Package main generates documentation files for domain-watch.
 package main
 
 import (
@@ -15,7 +16,7 @@ func main() {
 		panic(err)
 	}
 
-	if err := os.MkdirAll(output, 0o755); err != nil {
+	if err := os.MkdirAll(output, 0o750); err != nil {
 		panic(err)
 	}
 

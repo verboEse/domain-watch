@@ -10,10 +10,12 @@ import (
 	"github.com/lmittmann/tint"
 )
 
+// InitLog initializes the logger with the config's log level and format.
 func (c *Config) InitLog(w io.Writer) {
 	InitLog(w, c.logLevel, c.logFormat)
 }
 
+// InitLog initializes the global logger with the specified level and format.
 func InitLog(w io.Writer, level slogx.Level, format slogx.Format) {
 	switch format {
 	case slogx.FormatJSON:

@@ -1,3 +1,4 @@
+// Package telegram provides Telegram Bot API integration for sending notifications.
 package telegram
 
 import (
@@ -10,13 +11,16 @@ import (
 	"github.com/go-telegram/bot"
 )
 
+// Telegram implements the Integration interface for Telegram notifications.
 type Telegram struct {
 	ChatID int64
 	Bot    *bot.Bot
 }
 
+// Name returns the integration name.
 func (t *Telegram) Name() string { return "Telegram" }
 
+// Setup initializes the Telegram integration with the provided configuration.
 func (t *Telegram) Setup(ctx context.Context, conf *config.Config) error {
 	if t.ChatID = conf.TelegramChat; t.ChatID == 0 {
 		return fmt.Errorf("telegram %w: chat ID", util.ErrNotConfigured)
@@ -25,6 +29,7 @@ func (t *Telegram) Setup(ctx context.Context, conf *config.Config) error {
 	return t.Login(ctx, conf.TelegramToken)
 }
 
+// Login authenticates with the Telegram Bot API using the provided token.
 func (t *Telegram) Login(ctx context.Context, token string) error {
 	if token == "" {
 		return fmt.Errorf("telegram %w: token", util.ErrNotConfigured)
@@ -45,6 +50,7 @@ func (t *Telegram) Login(ctx context.Context, token string) error {
 	return nil
 }
 
+// Send sends a message to the configured Telegram chat.
 func (t *Telegram) Send(ctx context.Context, message string) error {
 	if t.Bot == nil {
 		return nil

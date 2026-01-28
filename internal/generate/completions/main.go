@@ -1,3 +1,4 @@
+// Package main generates shell completion scripts for domain-watch.
 package main
 
 import (
@@ -15,7 +16,7 @@ func main() {
 		panic(err)
 	}
 
-	if err := os.MkdirAll("completions", 0o777); err != nil {
+	if err := os.MkdirAll("completions", 0o750); err != nil {
 		panic(err)
 	}
 
@@ -29,6 +30,7 @@ func main() {
 			panic(err)
 		}
 
+		//nolint:gosec // File path is controlled and safe
 		f, err := os.Create(filepath.Join("completions", name+"."+string(shell)))
 		if err != nil {
 			panic(err)

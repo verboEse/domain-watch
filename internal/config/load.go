@@ -9,8 +9,10 @@ import (
 	"github.com/spf13/pflag"
 )
 
+// EnvPrefix is the prefix for environment variables.
 const EnvPrefix = "WATCH_"
 
+// Load loads configuration from flags and environment variables.
 func Load(cmd *cobra.Command, args []string) (*Config, error) {
 	conf, ok := FromContext(cmd.Context())
 	if !ok {
@@ -19,8 +21,10 @@ func Load(cmd *cobra.Command, args []string) (*Config, error) {
 	return conf, conf.Load(cmd, args)
 }
 
+// ErrNoDomain is returned when no domain is configured.
 var ErrNoDomain = errors.New("no domain was configured")
 
+// Load loads configuration values from command flags and environment variables.
 func (c *Config) Load(cmd *cobra.Command, args []string) error {
 	var errs []error
 	cmd.Flags().VisitAll(func(f *pflag.Flag) {
@@ -45,6 +49,7 @@ func (c *Config) Load(cmd *cobra.Command, args []string) error {
 	return errors.Join(errs...)
 }
 
+// EnvName converts a flag name to its corresponding environment variable name.
 func EnvName(name string) string {
 	name = strings.ToUpper(name)
 	name = strings.ReplaceAll(name, "-", "_")

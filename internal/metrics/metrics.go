@@ -1,3 +1,4 @@
+// Package metrics provides Prometheus metrics HTTP server functionality.
 package metrics
 
 import (
@@ -8,6 +9,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+// Serve starts the Prometheus metrics HTTP server.
 func Serve(conf *config.Config) error {
 	mux := http.NewServeMux()
 	mux.Handle("/metrics", promhttp.Handler())

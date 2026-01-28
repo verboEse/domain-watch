@@ -1,3 +1,4 @@
+// Package main is the entry point for the domain-watch application.
 package main
 
 import (

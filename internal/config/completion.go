@@ -1,3 +1,4 @@
+// Package config provides configuration management for domain-watch.
 package config
 
 import (
@@ -8,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// RegisterCompletions registers shell completion functions for all command flags.
 func RegisterCompletions(cmd *cobra.Command) {
 	must.Must(cmd.RegisterFlagCompletionFunc(FlagDomains, cobra.NoFileCompletions))
 	must.Must(cmd.RegisterFlagCompletionFunc(FlagEvery, cobra.NoFileCompletions))

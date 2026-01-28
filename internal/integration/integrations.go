@@ -12,8 +12,10 @@ import (
 	"gabe565.com/domain-watch/internal/util"
 )
 
+// Integrations is a collection of Integration instances.
 type Integrations []Integration
 
+// All returns all available integrations.
 func All() Integrations {
 	return Integrations{
 		&telegram.Telegram{},
@@ -21,6 +23,7 @@ func All() Integrations {
 	}
 }
 
+// Setup initializes all configured integrations.
 func Setup(ctx context.Context, conf *config.Config) (Integrations, error) {
 	all := All()
 	integrations := make(Integrations, 0, len(all))
@@ -42,6 +45,7 @@ func Setup(ctx context.Context, conf *config.Config) (Integrations, error) {
 	return integrations, nil
 }
 
+// Send sends a message to all configured integrations.
 func (i Integrations) Send(ctx context.Context, message string) {
 	sent := make([]string, 0, len(i))
 	for _, integration := range i {

@@ -1,3 +1,4 @@
+// Package main generates man pages for domain-watch.
 package main
 
 import (
@@ -29,7 +30,7 @@ func main() {
 		panic(err)
 	}
 
-	if err := os.MkdirAll("manpages", 0o755); err != nil {
+	if err := os.MkdirAll("manpages", 0o750); err != nil {
 		panic(err)
 	}
 
@@ -49,6 +50,7 @@ func main() {
 		Manual:  "User Commands",
 	}
 
+	//nolint:gosec // File path is controlled and safe
 	f, err := os.Create(filepath.Join("manpages", name+".1.gz"))
 	if err != nil {
 		panic(err)

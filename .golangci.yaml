@@ -1,3 +1,5 @@
+version: "2"
+
 run:
   timeout: 5m
 
@@ -11,7 +13,6 @@ linters:
     - bidichk
     - bodyclose
     - copyloopvar
-    - copyloopvar
     - decorder
     - dupl
     - durationcheck
@@ -20,7 +21,6 @@ linters:
     - errname
     - errorlint
     - forbidigo
-    - gci
     - ginkgolinter
     - gocheckcompilerdirectives
     - gochecknoglobals
@@ -30,14 +30,11 @@ linters:
     - gocritic
     - gocyclo
     - godox
-    - gofumpt
     - goheader
-    - goimports
     - gomoddirectives
     - gomodguard
     - goprintffuncname
     - gosec
-    - gosimple
     - govet
     - importas
     - inamedparam
@@ -67,10 +64,8 @@ linters:
     - spancheck
     - sqlclosecheck
     - staticcheck
-    - stylecheck
     - testableexamples
     - testifylint
-    - typecheck
     - unconvert
     - unparam
     - unused
@@ -79,3 +74,9 @@ linters:
     - wastedassign
     - whitespace
     - zerologlint
+
+formatters:
+  enable:
+    - gci
+    - gofumpt
+    - goimports

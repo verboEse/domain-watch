@@ -13,6 +13,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+// APIResponse represents the Telegram Bot API response structure.
 type APIResponse struct {
 	OK          bool            `json:"ok"`
 	Result      json.RawMessage `json:"result,omitempty"`
@@ -24,6 +25,7 @@ type APIResponse struct {
 	} `json:"parameters,omitempty"`
 }
 
+// NewTestClient creates a new Telegram client for testing with a mock HTTP server.
 func NewTestClient(t *testing.T, opts ...bot.Option) *Telegram {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/bot123/getMe" {

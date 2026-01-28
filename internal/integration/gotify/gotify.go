@@ -1,3 +1,4 @@
+// Package gotify implements the Gotify notification integration.
 package gotify
 
 import (
@@ -15,13 +16,16 @@ import (
 	"github.com/gotify/server/v2/model"
 )
 
+// Gotify represents a Gotify notification client.
 type Gotify struct {
 	URL   *url.URL
 	token string
 }
 
+// Name returns the integration name.
 func (g *Gotify) Name() string { return "Gotify" }
 
+// Setup initializes the Gotify client with the provided configuration.
 func (g *Gotify) Setup(ctx context.Context, conf *config.Config) error {
 	if conf.GotifyURL == "" {
 		return fmt.Errorf("gotify %w: token", util.ErrNotConfigured)
@@ -39,6 +43,7 @@ func (g *Gotify) Setup(ctx context.Context, conf *config.Config) error {
 	return g.Login(ctx)
 }
 
+// Login establishes a connection to the Gotify server.
 func (g *Gotify) Login(ctx context.Context) error {
 	u, err := g.URL.Parse("version")
 	if err != nil {
@@ -72,6 +77,7 @@ func (g *Gotify) Login(ctx context.Context) error {
 	return nil
 }
 
+// Send sends a message to Gotify.
 func (g *Gotify) Send(ctx context.Context, text string) error {
 	if g.URL == nil {
 		return nil
