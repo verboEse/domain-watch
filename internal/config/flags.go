@@ -8,6 +8,7 @@ import (
 )
 
 const (
+	// FlagDomains specifies the list of domains to watch.
 	FlagDomains   = "domains"
 	FlagEvery     = "every"
 	FlagSleep     = "sleep"
@@ -26,6 +27,7 @@ const (
 	FlagGotifyToken = "gotify-token"
 )
 
+// RegisterFlags registers all command-line flags for the application.
 func (c *Config) RegisterFlags(cmd *cobra.Command) {
 	fs := cmd.Flags()
 

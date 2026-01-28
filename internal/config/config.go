@@ -6,6 +6,7 @@ import (
 	"gabe565.com/utils/slogx"
 )
 
+// Config holds all configuration options for domain-watch.
 type Config struct {
 	Domains   []string
 	Every     time.Duration
@@ -25,6 +26,7 @@ type Config struct {
 	MetricsAddress string
 }
 
+// New creates a new Config with default values.
 func New() *Config {
 	return &Config{
 		Sleep:     3 * time.Second,

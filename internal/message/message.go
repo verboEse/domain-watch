@@ -1,3 +1,4 @@
+// Package message provides functions for creating notification messages.
 package message
 
 import (
@@ -6,6 +7,7 @@ import (
 	"github.com/r3labs/diff/v3"
 )
 
+// NewStatusChangedMessage creates a message describing domain status changes.
 func NewStatusChangedMessage(domain string, changes []diff.Change) string {
 	var added, removed string
 	for _, change := range changes {
@@ -28,6 +30,7 @@ func NewStatusChangedMessage(domain string, changes []diff.Change) string {
 	return message
 }
 
+// NewThresholdMessage creates a message about domain expiration.
 func NewThresholdMessage(domain string, timeLeft int) string {
 	return fmt.Sprintf("%s will expire in %d days.", domain, timeLeft)
 }
