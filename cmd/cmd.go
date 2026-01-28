@@ -1,3 +1,4 @@
+// Package cmd provides the command-line interface for domain-watch.
 package cmd
 
 import (
@@ -13,6 +14,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// New creates and configures the root cobra command.
 func New(opts ...cobrax.Option) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "domain-watch [flags] domain...",

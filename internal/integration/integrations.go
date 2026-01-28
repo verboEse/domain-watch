@@ -12,8 +12,10 @@ import (
 	"gabe565.com/domain-watch/internal/util"
 )
 
+// Integrations is a collection of Integration instances.
 type Integrations []Integration
 
+// All returns all available integrations.
 func All() Integrations {
 	return Integrations{
 		&telegram.Telegram{},

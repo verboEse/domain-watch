@@ -1,3 +1,4 @@
+// Package main generates shell completion scripts for domain-watch.
 package main
 
 import (

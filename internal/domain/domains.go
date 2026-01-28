@@ -36,16 +36,19 @@ var (
 	}, []string{"domain"})
 )
 
+// Domains represents a collection of domains to watch along with sleep configuration.
 type Domains struct {
 	Sleep   time.Duration
 	Domains []*Domain
 }
 
+// Add appends a new domain to the collection and updates metrics.
 func (d *Domains) Add(domain Domain) {
 	domainCountMetric.Add(1)
 	d.Domains = append(d.Domains, &domain)
 }
 
+// Tick performs a single check cycle for all domains and sends notifications via integrations.
 func (d Domains) Tick(ctx context.Context, integrations integration.Integrations) {
 	defer func() {
 		lastTickMetric.SetToCurrentTime()

@@ -1,3 +1,4 @@
+// Package main generates documentation files for domain-watch.
 package main
 
 import (

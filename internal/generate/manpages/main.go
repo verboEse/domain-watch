@@ -1,3 +1,4 @@
+// Package main generates man pages for domain-watch.
 package main
 
 import (

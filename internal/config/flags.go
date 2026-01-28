@@ -9,9 +9,11 @@ import (
 
 const (
 	// FlagDomains specifies the list of domains to watch.
-	FlagDomains   = "domains"
-	FlagEvery     = "every"
-	FlagSleep     = "sleep"
+	FlagDomains = "domains"
+	// FlagEvery specifies how often to check domain status.
+	FlagEvery = "every"
+	// FlagSleep specifies the delay between checking individual domains.
+	FlagSleep = "sleep"
 	FlagThreshold = "threshold"
 
 	FlagLogFormat = "log-format"
