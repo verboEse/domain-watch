@@ -1,7 +1,7 @@
 ## Implementation Tasks
 
 ### 1. Configuration Update
-- [x] 1.1 Add `version: 1` field to the top of `.golangci.yaml`
+- [x] 1.1 Add `version: 2` field to the top of `.golangci.yaml`
 - [x] 1.2 Verify the configuration file syntax is valid
 
 ### 2. Validation
