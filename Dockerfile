@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM tonistiigi/xx:1.6.1 AS xx
+FROM --platform=$BUILDPLATFORM tonistiigi/xx:1.9.0 AS xx
 
 FROM --platform=$BUILDPLATFORM golang:1.24.1-alpine AS builder
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.cache \
     CGO_ENABLED=0 xx-go build -ldflags='-w -s' -trimpath
 
 
-FROM alpine:3.21.3
+FROM alpine:3.23.3
 WORKDIR /app
 
 RUN apk add --no-cache tzdata
