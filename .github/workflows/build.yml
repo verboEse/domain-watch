@@ -83,7 +83,7 @@ jobs:
           FURY_TOKEN: ${{ secrets.FURY_TOKEN }}
           AUR_SSH_KEY: ${{ secrets.AUR_SSH_KEY }}
       - name: Push beta image
-        if: github.ref_name == 'main'
+        if: github.ref_name == 'main' && github.repository == 'gabe565/domain-watch'
         run: |
           export REPO="$(tr '[[:upper:]]' '[[:lower:]]' <<< "ghcr.io/$GITHUB_REPOSITORY")"
           IMAGES=()
