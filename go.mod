@@ -5,7 +5,7 @@ go 1.25.7
 require (
 	gabe565.com/utils v0.0.0-20251001054419-00a1424779a7
 	github.com/go-telegram/bot v1.18.0
-	github.com/gotify/server/v2 v2.8.0
+	github.com/gotify/server/v2 v2.9.0
 	github.com/likexian/whois v1.15.7
 	github.com/likexian/whois-parser v1.24.21
 	github.com/lmittmann/tint v1.1.3
@@ -35,8 +35,8 @@ require (
 	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/net v0.48.0 // indirect
-	golang.org/x/sys v0.39.0 // indirect
-	golang.org/x/text v0.32.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/text v0.33.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
