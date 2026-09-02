@@ -3,7 +3,7 @@ module gabe565.com/domain-watch
 go 1.25.7
 
 require (
-	gabe565.com/utils v0.0.0-20251001054419-00a1424779a7
+	gabe565.com/utils v0.0.0-20260511235214-4059440fa83b
 	github.com/go-telegram/bot v1.18.0
 	github.com/gotify/server/v2 v2.8.0
 	github.com/likexian/whois v1.15.7
