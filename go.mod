@@ -1,6 +1,6 @@
 module gabe565.com/domain-watch
 
-go 1.25.7
+go 1.27.1
 
 require (
 	gabe565.com/utils v0.0.0-20251001054419-00a1424779a7
