@@ -4,7 +4,7 @@ go 1.25.7
 
 require (
 	gabe565.com/utils v0.0.0-20251001054419-00a1424779a7
-	github.com/go-telegram/bot v1.18.0
+	github.com/go-telegram/bot v1.25.0
 	github.com/gotify/server/v2 v2.8.0
 	github.com/likexian/whois v1.15.7
 	github.com/likexian/whois-parser v1.24.21
