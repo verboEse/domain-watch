@@ -13,7 +13,7 @@ import (
 
 	"gabe565.com/domain-watch/internal/config"
 	"gabe565.com/domain-watch/internal/util"
-	"github.com/gotify/server/v2/model"
+	"github.com/gotify/server/v3/model"
 )
 
 // Gotify represents a Gotify notification client.
