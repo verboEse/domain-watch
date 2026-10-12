@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM tonistiigi/xx:1.9.0 AS xx
+FROM --platform=$BUILDPLATFORM tonistiigi/xx:1.10.0 AS xx
 
 FROM --platform=$BUILDPLATFORM golang:1.25.7-alpine AS builder
 WORKDIR /app
